@@ -36,7 +36,7 @@ export default class Register extends Component {
         <div className="col-md-8 m-auto">
           <h1 className="display-4 text-center">Sign Up</h1>
           <p className="lead text-center">Create your DevConnector account</p>
-          <form action="create-profile.html">
+          <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <input type="text" className="form-control form-control-lg" placeholder="Name" name="name" required 
                value={ this.state.name }
@@ -62,7 +62,7 @@ export default class Register extends Component {
                onChange={ this.onChange }
               />
             </div>
-            <input type="submit" className="btn btn-info btn-block mt-4" />
+            <input type="submit" className="btn btn-info btn-block mt-4" onSubmit={ this.onSubmit }/>
           </form>
         </div>
       </div>
