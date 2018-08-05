@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+
 
 export default class Login extends Component {
   constructor(props) {
@@ -57,3 +60,13 @@ export default class Login extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+  const { loggingIn } = state.authentication;
+  return {
+    loggingIn
+  }
+}
+
+const connectedSignIn = connect(mapStateToProps)(Login)
+export { connectedSignIn as Login}

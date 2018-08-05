@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import classnames from 'classnames';
+import { connect } from 'react-redux';
 
 class Register extends Component {
   constructor() {
@@ -39,7 +40,8 @@ class Register extends Component {
 
   render() {
     const { errors } = this.state;
-
+    const { registering } = this.props;
+    
     return (
       <div className="register">
         <div className="container">
@@ -124,4 +126,13 @@ class Register extends Component {
   }
 }
 
-export default Register;
+function mapStateToProps(state) {
+  const { registering } = state.registration;
+  return {
+    registering
+  }
+}
+
+const connectedRegisterPage = connect(mapStateToProps)(Register)
+
+export {connectedRegisterPage as Register};

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Register from './components/Register';
+import { Register } from './components/Register';
 import Login from './components/Login';
 import Landing from './components/Landing';
 import { Footer } from './components/Footer';
