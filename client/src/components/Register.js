@@ -41,7 +41,7 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
     const { registering } = this.props;
-    
+
     return (
       <div className="register">
         <div className="container">
@@ -127,9 +127,8 @@ class Register extends Component {
 }
 
 function mapStateToProps(state) {
-  const { registering } = state.registration;
   return {
-    registering
+    registering: state.registration
   }
 }
 

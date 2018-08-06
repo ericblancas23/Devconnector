@@ -4,7 +4,7 @@ import { services } from '../Services/index';
 import { alertActions } from './alert.actions';
 
 
-export const userActions = (user) => {
+export const register = (user) => {
     return dispatch => {
         dispatch(request(user))
         services.register(user).then(
@@ -31,7 +31,7 @@ export const userActions = (user) => {
     function failure(error) { return{ type: constants.REGISTER_FAILURE, error}}
 }
 
-export const login = (username) => {
+export const login = (username, password) => {
     return dispatch => {
         dispatch(request({ username }))
         services.login(username, password).then(

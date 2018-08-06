@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const root = {
+export const services = {
     login, 
     logout,
     register
@@ -29,7 +29,7 @@ function logout() {
 
 //utilities 
 
-function saveToken(token) {
+function saveToken(user) {
     if (user && user.data.token) {
         localStorage.setItem('user', JSON.stringify(user.data.token))
         localStorage.setItem('data', JSON.stringify(user.data.user._id))

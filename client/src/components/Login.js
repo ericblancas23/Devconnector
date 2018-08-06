@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { login } from '../Actions/users.actions';
 import { connect } from 'react-redux';
 
 
@@ -13,6 +14,10 @@ export default class Login extends Component {
       }
       this.onSubmit = this.onSubmit.bind(this);
       this.onChange = this.onChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.login
   }
 
   onChange(e) {
@@ -62,9 +67,8 @@ export default class Login extends Component {
 }
 
 function mapStateToProps(state) {
-  const { loggingIn } = state.authentication;
   return {
-    loggingIn
+    loggingIn: state.authentication
   }
 }
 
